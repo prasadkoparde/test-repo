@@ -2,9 +2,9 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <app-header></app-header>
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <app-header (selectedFeature)="onSelectFeature($event)"></app-header>
+      <app-recipes *ngIf="featureClicked ==='recipes'">Recipes Works!</app-recipes>
+      <app-shopping-list *ngIf="featureClicked !=='recipes'">Shopping-List Works</app-shopping-list>
     </div>    
   </div>
 </div>
